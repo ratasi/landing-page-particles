@@ -34,8 +34,8 @@ export const motionTransitionsAbout = {
 export const fadeIn = (position: string) => {
     return {
         visible: {
-            y: position === 'bottom' ? 0 : -80,
-            x: position === 'bottom' ? 0 : -80,
+            y: 0,
+            x: 0,
             opacity: 1,
             transition: {
                 type: "tween",
@@ -45,43 +45,17 @@ export const fadeIn = (position: string) => {
             },
         },
         hidden: {
-            y: 80,
-            x: 0,
+            y: position === 'bottom' ? -80 : 0,
+            x: position === 'right' ? 80 : 0,
             opacity: 0,
             transition: {
                 type: "tween",
                 duration: 0.5,
                 delay: 0.5,
-                ease: [0.25, 0.6, 0.3, 0.8],
+                ease: [0.25, 0.25, 0.25, 0.25],
             },
         },
 
     };
 };
 
-// export const fadeInRight = () => {
-//     return {
-//         hidden: {
-//             y: -80,
-//             x: -80,
-//             opacity: 0,
-//             transition: {
-//                 type: "tween",
-//                 duration: 1.5,
-//                 delay: 0.5,
-//                 ease: [0.25, 0.6, 0.3, 0.8],
-//             },
-//         },
-//         visible: {
-//             y: 0,
-//             x: 0,
-//             opacity: 1,
-//             transition: {
-//                 type: "tween",
-//                 duration: 1.4,
-//                 delay: 0.5,
-//                 ease: [0.25, 0.25, 0.25, 0.75],
-//             },
-//         },
-//     };
-// };
